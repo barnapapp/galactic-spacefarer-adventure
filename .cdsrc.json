@@ -1,0 +1,20 @@
+{
+  "[development]": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": { "url": "galactic.db" }
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "testUser": {
+            "password": "test123",
+            "roles": ["authenticated-user"],
+            "attr": { "originPlanet": "Mars" }
+          }
+        }
+      }
+    }
+  }
+}
