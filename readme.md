@@ -1,22 +1,15 @@
-# Getting Started
+# Galactic Spacefarer Adventure
 
-Welcome to your new CAP project.
+SAP CAP + Fiori Elements app about intergalactic spacefarers.
 
-It contains these folders and files, following our recommended project layout:
+## Features
+- Spacefarer List Report (filter, sort, pagination)
+- Object Page with editable cosmic fields
+- CAP service with custom @Before/@After create logic
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`readme.md` | this getting started guide
+## Stack
+CAP, Node.js, SAP Fiori Elements, SAP UI5, SQLite
 
-## Next Steps
-
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start with your domain model, in a CDS file in `db/`
-
-## Learn More
-
-Learn more at <https://cap.cloud.sap>.
+## Run
+npm install
+cds watch
