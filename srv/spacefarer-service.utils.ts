@@ -1,16 +1,28 @@
-import { type Spacefarer, SpacesuitColor } from "./types/spacefarer.types.ts";
-import type { SpacefarerRequest } from "./types/cds.types";
+import type { Spacefarer } from '#cds-models/galactic/spacefarer/adventure';
+import type { Request } from '@sap/cds';
 
-export const spacefarerValidation = (spacefarer: Spacefarer, req: SpacefarerRequest) => {
-    if (spacefarer?.stardustCollection < 0) {
+export const SpacesuitColor = {
+    RED: 'RED',
+    BLUE: 'BLUE',
+    GREEN: 'GREEN',
+    GOLD: 'GOLD',
+    SILVER: 'SILVER',
+    COSMIC_BLACK: 'COSMIC_BLACK'
+} as const;
+
+export const spacefarerValidation = (spacefarer: Spacefarer, req: Request) => {
+    const stardustCollection = spacefarer.stardustCollection ?? 0
+    const wormholeSkill = spacefarer.wormholeNavigationSkill ?? 0
+
+    if (stardustCollection < 0) {
         req.error(400, 'Stardust collection cannot be negative!')
     }
 
-    if (spacefarer.wormholeNavigationSkill < 1 || spacefarer.wormholeNavigationSkill > 10) {
+    if (wormholeSkill < 1 || wormholeSkill > 10) {
         req.error(400, 'Wormhole navigation skill must be between 1 and 10!')
     }
 
-    if (spacefarer.wormholeNavigationSkill >= 9) {
+    if (wormholeSkill >= 9) {
         spacefarer.stardustCollection = (spacefarer.stardustCollection || 0) + 100
         console.log(`${spacefarer.name} received +100 stardust for high navigation skill.`)
     }

@@ -3,10 +3,14 @@
     "module": "NodeNext",
     "target": "ES2022",
     "moduleResolution": "NodeNext",
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "#cds-models/*": ["./@cds-models/*"]
+    }
   },
   "include": ["srv/**/*"],
   "exclude": ["node_modules", "dist"]

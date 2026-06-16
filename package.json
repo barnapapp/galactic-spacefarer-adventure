@@ -1,21 +1,26 @@
 {
   "name": "galactir-spacefarer-adventure",
+  "type": "module",
   "version": "1.0.0",
   "description": "Galactic Spacefarer Adventure System",
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
+    "@cap-js/cds-typer": "^0.39.1",
     "@sap/cds": "^9.9.1",
     "express": "^4"
   },
   "devDependencies": {
+    "@cap-js/cds-test": "^1.0.1",
     "@cap-js/sqlite": "^2.4.0",
     "@sapui5/types": "^1.148.1",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20.19.41",
     "@ui5/cli": "^4.0.55",
     "@ui5/ts-interface-generator": "^0.11.1",
     "cds-plugin-ui5": "^0.13.0",
+    "mocha": "^11.7.6",
     "ts-node": "^10.9.2",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
@@ -23,7 +28,12 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch": "cds watch"
+    "watch": "cds watch",
+    "test:mocha": "npx mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "imports": {
+    "#cds-models": "./@cds-models/index.js",
+    "#cds-models/*": "./@cds-models/*/index.js"
   },
   "cds": {
     "requires": {

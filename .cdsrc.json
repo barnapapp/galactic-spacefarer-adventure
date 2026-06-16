@@ -8,10 +8,16 @@
       "auth": {
         "kind": "mocked",
         "users": {
+          "*": false,
           "testUser": {
             "password": "test123",
-            "roles": ["authenticated-user"],
+            "roles": ["Editor"],
             "attr": { "originPlanet": "Mars" }
+          },
+          "testUser2": {
+            "password": "test1234",
+            "roles": ["Viewer"],
+            "attr": { "originPlanet": "Moon" }
           }
         }
       }

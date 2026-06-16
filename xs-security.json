@@ -1,0 +1,24 @@
+{
+  "xsappname": "galactic-spacefarer-adventure-app",
+  "scopes": [
+    { "name": "$XSAPPNAME.read", "description": "Read access" },
+    { "name": "$XSAPPNAME.write", "description": "Write access" }
+  ],
+  "attributes": [
+    {
+      "name": "originPlanet",
+      "description": "The user's origin planet",
+      "valueType": "string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "scope-references": ["$XSAPPNAME.read"]
+    },
+    {
+      "name": "Editor",
+      "scope-references": ["$XSAPPNAME.read", "$XSAPPNAME.write"]
+    }
+  ]
+}
