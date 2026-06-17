@@ -23,8 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy database
-        run: npx cds deploy --to sqlite
-
       - name: Run tests
         run: npm run test:mocha -- --timeout 30000
