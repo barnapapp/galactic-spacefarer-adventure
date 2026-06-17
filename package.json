@@ -30,7 +30,7 @@
   "scripts": {
     "start": "cds-serve",
     "watch": "cds watch",
-    "test:mocha": "npx mocha --require ts-node/register test/**/*.test.ts"
+    "test:mocha": "npx mocha --require ts-node/register test/**/*.test.ts --exit"
   },
   "imports": {
     "#cds-models": "./@cds-models/index.js",
