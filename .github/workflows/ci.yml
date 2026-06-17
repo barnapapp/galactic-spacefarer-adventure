@@ -26,8 +26,5 @@ jobs:
       - name: Start CAP server
         run: npx cds run --with-mocks &
 
-      - name: Wait for CAP
-        run: npx wait-on http://localhost:4004
-
       - name: Run tests
         run: npm run test:mocha -- --timeout 30000
