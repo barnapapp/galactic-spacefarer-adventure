@@ -26,6 +26,9 @@ jobs:
       - name: Install CAP CDS-DK
         run: npm install -g @sap/cds-dk
 
+      - name: Build CAP (safe mode)
+        run: cds build --production --for nodejs
+
       - name: Start CAP backend
         run: nohup cds run > cds.log 2>&1 &
 
