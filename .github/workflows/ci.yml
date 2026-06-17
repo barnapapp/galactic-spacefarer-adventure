@@ -23,8 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start CAP (debug)
-        run: npx cds run
-
       - name: Run tests
         run: npm run test:mocha -- --timeout 30000
